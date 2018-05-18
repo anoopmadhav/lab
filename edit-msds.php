@@ -71,7 +71,7 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	<input type="text" name="name" value="<?php echo $row[1];?>" required/>
 	<br />
 
-	<label for="formula">Formala</label>
+	<label for="formula">Formula</label>
 	<input type="text" name="formula" value="<?php echo $row[7];?>" required/>
 	<br />
 
@@ -104,7 +104,7 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	<br />
 	<textarea name="remarks" cols="40" rows = "5"> <?php echo $row[13];?></textarea>
 	<br />
-	<input type="submit" name="submit" value="SUMBIT" class="submit" id="buysub"/>
+	<input type="submit" name="submit" value="SUBMIT" class="submit" id="buysub"/>
 </form>
 <?php } }?>
 	</body>

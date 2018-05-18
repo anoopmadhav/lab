@@ -36,7 +36,7 @@
 				echo "<td>".$row[$i]."</td>";
 			}
 			echo "</tr>";
-			echo "<td align='center'><a href='view-msds.php?id=$id'>view MDSD</a></td>";
+			echo "<td align='center'><a href='view-msds.php?id=$id'>view MSDS</a></td>";
 			echo "</tr>";
 		}
 		echo "</table>";
