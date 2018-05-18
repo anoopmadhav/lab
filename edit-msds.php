@@ -98,12 +98,12 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	
 	
 	<label for="boilingpoint" class="desc">Boiling Point</label>
-	<input type="number" step = "0.01" name="boilingpoint"  value="<?php echo $row[11];?>" required/>
+	<input type="text" name="boilingpoint"  value="<?php echo $row[11];?>" required/>
 	<br />
 
 
 	<label for="meltingpoint" class="desc">Melting Point</label>
-	<input type="number" step = "0.01" name="meltingpoint" value="<?php echo $row[12];?>" required/>
+	<input type="text" name="meltingpoint"  value="<?php echo $row[12];?>" required/>
 	<br />
 
 	<label for="saddr" class="desc">Special Remarks on Reactivity </label>
