@@ -52,7 +52,7 @@ $storage =$_REQUEST['storage'];
 $boilingpoint =$_REQUEST['boilingpoint'];
 $meltingpoint =$_REQUEST['meltingpoint'];
 $remarks =$_REQUEST['remarks'];
-$update="UPDATE msds SET name='".$name."', formula='".$formula."', first_aid_measures='".$firstaidmeasures."', precautions='".$precautions."', storage='".$storage."', boiling_point='".$boilingpoint."', melting_point='".$meltingpoint."', special_remarks_on_reactivity='".$remarks."' WHERE id='".$id."'";
+$update="UPDATE chemicals SET name='".$name."', formula='".$formula."', first_aid_measures='".$firstaidmeasures."', precautions='".$precautions."', storage='".$storage."', boiling_point='".$boilingpoint."', melting_point='".$meltingpoint."', special_remarks_on_reactivity='".$remarks."' WHERE id='".$id."'";
 mysql_query($update) or die(mysql_error());
 header("Location: lab_assistant_screen.php");
 $status = "Record Updated Successfully. </br></br><a href='view.php'>View Updated Record</a>";
@@ -72,37 +72,37 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	<br />
 
 	<label for="formula">Formala</label>
-	<input type="text" name="formula" value="<?php echo $row[2];?>" required/>
+	<input type="text" name="formula" value="<?php echo $row[7];?>" required/>
 	<br />
 
 	<label for="firstaidmeasures">First Aid Measures</label>
 	<br />
-	<textarea name="firstaidmeasures" cols="40" rows = "5"> <?php echo $row[3];?></textarea>
+	<textarea name="firstaidmeasures" cols="40" rows = "5"> <?php echo $row[8];?></textarea>
 	<br />
 
 	<label for="precautions" class="desc">Precautions</label>
 	<br />
-	<textarea name="precautions" cols="40" rows = "5"> <?php echo $row[4];?></textarea>
+	<textarea name="precautions" cols="40" rows = "5"> <?php echo $row[9];?></textarea>
 	<br />
 
 	<label for="storage" class="desc">Storage</label>
 	<br />
-	<textarea name="storage" cols="40" rows = "5"> <?php echo $row[5];?></textarea>
+	<textarea name="storage" cols="40" rows = "5"> <?php echo $row[10];?></textarea>
 	<br />
 	
 	
 	<label for="boilingpoint" class="desc">Boiling Point</label>
-	<input type="text" name="boilingpoint" pattern="[0-9]+" value="<?php echo $row[6];?>" required/>
+	<input type="text" name="boilingpoint" pattern="[0-9]+" value="<?php echo $row[11];?>" required/>
 	<br />
 
 
 	<label for="meltingpoint" class="desc">Melting Point</label>
-	<input type="text" name="meltingpoint" pattern="[0-9]+" value="<?php echo $row[7];?>" required/>
+	<input type="text" name="meltingpoint" pattern="[0-9]+" value="<?php echo $row[12];?>" required/>
 	<br />
 
 	<label for="saddr" class="desc">Special Remarks on Reactivity </label>
 	<br />
-	<textarea name="remarks" cols="40" rows = "5"> <?php echo $row[8];?></textarea>
+	<textarea name="remarks" cols="40" rows = "5"> <?php echo $row[13];?></textarea>
 	<br />
 	<input type="submit" name="submit" value="SUMBIT" class="submit" id="buysub"/>
 </form>

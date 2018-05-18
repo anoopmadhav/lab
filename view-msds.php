@@ -51,7 +51,7 @@
 				
 			</right>
 			<?php
-			$msds = mysql_query("SELECT * FROM msds WHERE id='".$id."'");
+			$msds = mysql_query("SELECT * FROM chemicals WHERE id='".$id."'");
 			$row = mysql_fetch_row($msds);
 			/*while()
 			{
@@ -70,31 +70,31 @@
 			</div>
 			<div>
 				<h2>Chemical Formula</h2>
-				<p><?php echo $row[2]; ?></p>
-			</div>
-			<div>
-				<h2>First Aid Measurments</h2>
-				<p><?php echo $row[3]; ?></p>
-			</div>
-			<div>
-				<h2>Preacautions</h2>
-				<p><?php echo $row[4]; ?></p>
-			</div>
-			<div>
-				<h2>Storage</h2>
-				<p><?php echo $row[5]; ?></p>
-			</div>
-			<div>
-				<h2>Boiling Point</h2>
-				<p><?php echo $row[6]; ?></p>
-			</div>
-			<div>
-				<h2>Melting Point</h2>
 				<p><?php echo $row[7]; ?></p>
 			</div>
 			<div>
-				<h2>Special Remarks on Reactivity</h2>
+				<h2>First Aid Measurments</h2>
 				<p><?php echo $row[8]; ?></p>
+			</div>
+			<div>
+				<h2>Preacautions</h2>
+				<p><?php echo $row[9]; ?></p>
+			</div>
+			<div>
+				<h2>Storage</h2>
+				<p><?php echo $row[10]; ?></p>
+			</div>
+			<div>
+				<h2>Boiling Point</h2>
+				<p><?php echo $row[11]; ?></p>
+			</div>
+			<div>
+				<h2>Melting Point</h2>
+				<p><?php echo $row[12]; ?></p>
+			</div>
+			<div>
+				<h2>Special Remarks on Reactivity</h2>
+				<p><?php echo $row[13]; ?></p>
 			</div>
 			<input type="submit" name="submit" value="EDIT MSDS" class="submit" id="runsqlq"/>
 		</form>
