@@ -12,7 +12,7 @@
 		include 'config.php';
 		if(!($dbconn = @mysql_connect($dbhost, $dbuser, $dbpass))) exit('Error connecting to database.');
 		mysql_select_db($db);
-		$sqlq = mysql_query("SELECT * FROM chemicals WHERE name='".$sqlq."'");
+		$sqlq = mysql_query("SELECT id,name,company,packing_size,amount_left,critical_amount,location FROM chemicals WHERE name='".$sqlq."'");
 		if(!$sqlq)
 		{
 			echo "Query Failed.<br />";
@@ -37,7 +37,7 @@
 			{
 				echo "<td>{$_column}</td>";
 			}
-			echo "<td align='center'><a href='edit.php?id={$id}'>Edit</a></td><td align='center'><a href='delete.php?id={$id}'>Delete</a></td></tr><td align='center'><a href='msds/{$name}.pdf'>view MDSD</a></td>";
+			echo "<td align='center'><a href='edit.php?id={$id}'>Edit</a></td><td align='center'><a href='delete.php?id={$id}'>Delete</a></td></tr><td align='center'><a href='view-msds.php?id=$id'>view MSDS</a></td>";
 			echo "</tr>";
 		}
 		echo "</table>";

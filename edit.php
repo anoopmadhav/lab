@@ -62,11 +62,11 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	<br />
 
 	<label for="amountleft" class="desc">Amount Left</label>
-	<input type="text" name="amountleft" pattern="[0-9]+" value="<?php echo $row[4];?>" required/>
+	<input type="number" step = "0.01" name="amountleft" value="<?php echo $row[4];?>" required/>
 	<br />
 
 	<label for="criticalamount" class="desc">Critical Amount</label>
-	<input type="text" name="criticalamount" pattern="[0-9]+"  value="<?php echo $row[5];?>" required/>
+	<input type="number" step = "0.01" name="criticalamount"  value="<?php echo $row[5];?>" required/>
 	<br />
 	
 	<label for="saddr" class="desc">Location</label>

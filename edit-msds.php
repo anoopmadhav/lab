@@ -39,7 +39,7 @@
 	<body>
 <?php
 $status = "";
-$query = "SELECT * from msds where id='".$id."'"; 
+$query = "SELECT * from chemicals where id='".$id."'"; 
 $result = mysql_query($query);
 $row = mysql_fetch_row($result);
 if(isset($_POST['new']) && $_POST['new']==1)
@@ -54,7 +54,13 @@ $meltingpoint =$_REQUEST['meltingpoint'];
 $remarks =$_REQUEST['remarks'];
 $update="UPDATE chemicals SET name='".$name."', formula='".$formula."', first_aid_measures='".$firstaidmeasures."', precautions='".$precautions."', storage='".$storage."', boiling_point='".$boilingpoint."', melting_point='".$meltingpoint."', special_remarks_on_reactivity='".$remarks."' WHERE id='".$id."'";
 mysql_query($update) or die(mysql_error());
-header("Location: lab_assistant_screen.php");
+if(isset($_SESSION['lab_assistant'])){
+	header("Location: lab_assistant_screen.php");
+}
+else{
+	header("Location: lab_admin_screen.php");
+}
+
 $status = "Record Updated Successfully. </br></br><a href='view.php'>View Updated Record</a>";
 }else {
 ?>
@@ -92,12 +98,12 @@ $status = "Record Updated Successfully. </br></br><a href='view.php'>View Update
 	
 	
 	<label for="boilingpoint" class="desc">Boiling Point</label>
-	<input type="text" name="boilingpoint" pattern="[0-9]+" value="<?php echo $row[11];?>" required/>
+	<input type="number" step = "0.01" name="boilingpoint"  value="<?php echo $row[11];?>" required/>
 	<br />
 
 
 	<label for="meltingpoint" class="desc">Melting Point</label>
-	<input type="text" name="meltingpoint" pattern="[0-9]+" value="<?php echo $row[12];?>" required/>
+	<input type="number" step = "0.01" name="meltingpoint" value="<?php echo $row[12];?>" required/>
 	<br />
 
 	<label for="saddr" class="desc">Special Remarks on Reactivity </label>
