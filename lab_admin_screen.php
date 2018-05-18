@@ -95,7 +95,7 @@
 	<label for="purchase" style="font-size:25px;">Notifications</label>
 	<br /><br />
 	<?php 
-				$sqlq = mysql_query("SELECT * FROM chemicals WHERE amount_left!='' and amount_left<=critical_amount");
+				$sqlq = mysql_query("SELECT name,company,packing_size,amount_left,critical_amount,location FROM chemicals WHERE amount_left!='' and amount_left<=critical_amount");
 				if(!$sqlq)
 				{
 					echo "Query Failed.<br />";
