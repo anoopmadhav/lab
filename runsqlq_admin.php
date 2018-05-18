@@ -22,7 +22,7 @@
 		echo "<pre>Fetched ".$num_rows." rows. Output:<br /><br />";
 		echo "<table border=1><tr>";
 
-		for($i = 0; $i < mysql_num_fields($sqlq); $i++)
+		for($i = 1; $i < mysql_num_fields($sqlq); $i++)
 		{
     			$field_info = mysql_fetch_field($sqlq, $i);
 			echo "<th>{$field_info->name}</th>";
@@ -32,10 +32,8 @@
 		{
 			echo "<tr>";
 			$id = $row[0];
-			$name = $row[1];
-			foreach($row as $_column)
-			{
-				echo "<td>{$_column}</td>";
+			for($i=1;$i<7;$i++){
+				echo "<td>".$row[$i]."</td>";
 			}
 			echo "<td align='center'><a href='edit.php?id={$id}'>Edit</a></td><td align='center'><a href='delete.php?id={$id}'>Delete</a></td></tr><td align='center'><a href='view-msds.php?id=$id'>view MSDS</a></td>";
 			echo "</tr>";
